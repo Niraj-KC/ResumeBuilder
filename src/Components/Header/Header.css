@@ -1,0 +1,86 @@
+.navbar {
+    height: 77px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 24px 0px 24px 0px;
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensure it's fixed to the left side */
+    right: 0; /* Ensure it's fixed to the right side */
+    z-index: 20;
+  }
+  
+.nav-content {
+  height: 56px;
+  width: 1311px;
+  margin: 0px 19px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.nav-logo {
+  height: 30px;
+}
+.logo img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 154px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.nav-ops {
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+  font-size: 0.85rem;
+}
+.nav-ops a {
+  display: inline;
+  margin: 13px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.nav-extra {
+  margin: 62px;
+}
+.nav-ops2 {
+  height: 30px;
+  width: 190px;
+  display: flex;
+  font-family: "Poppins",sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+  border: 1.2px solid #fd9d60;
+  border-radius: 5px;
+}
+.nav-ops2 a {
+  font-size: 1.3rem;
+  font-weight: 200;
+  width: 188px;
+  height: 25px;
+}
+/* .nav-anker span {
+    background: linear-gradient(332deg, #EF59A5 -22.1%, #FD9D60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+} */
+.nav-ops2:hover{
+  background: linear-gradient(332deg, #e92085 -15.2%, #fd7521 66.64%);
+  cursor: pointer;
+  color: white;
+}
+.nav-ops2:hover .nav-anker {
+  color: white;
+}

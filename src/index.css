@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+  border: border-box;
+}
+body {
+    margin: 0;
+    padding-top: 77px;
+    overflow-x: hidden;
+  }

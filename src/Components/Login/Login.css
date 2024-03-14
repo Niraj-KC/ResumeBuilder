@@ -1,0 +1,159 @@
+header {
+    height: 26px;
+    width: 100%;
+    /* background: red; */
+    padding: 6px 0px;
+    position:absolute;
+    top: 0;
+    z-index: 9;
+    box-shadow: 0px 3px 3px rgba(0,0,0,.05);
+}
+.header-main {
+    height: 26px;
+    width: 1225px;
+    margin: 0px 62px;
+    /* background: pink; */
+}
+.svg-logo {
+    width: 170px;
+    height: 26px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    background-image: url("../../assets/rb-new-logo-color.svg");
+    background-repeat: no-repeat;
+}
+
+/** Login-Register **/
+
+.login-reg {
+    height: 642px;
+    width: 100%;
+}
+.login-page {
+    width: 982px;
+    height: 580px;
+    margin: 62px 183.5px 0px;
+    /* background: red; */
+    display: flex;
+    flex-direction: row;
+}
+.login-info {
+    width: 421px;
+    height: 336px;
+    margin: 22px 65px 0px 0px;
+}
+.login-info-site-logo {
+    width: 170px;
+    height: 29px;
+    margin: 0px 0px 26px;
+    display: flex;
+    justify-content: center;
+}
+.login-info-site-div {
+    width: 170px;
+    height: 26px;
+    /* background-image: url("/img/rb-new-logo-color.svg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-logo {
+    background-image: url("../../assets/rb-new-logo-color.svg");
+    background-size: cover;
+    width: 136px;
+    height: 22.565px;
+}
+.login-title {
+    width: 421px;
+    height: 198px;
+    margin: 0px 0px 27px;
+    font-size: 1.7rem;
+    font-family: "Poppins",sans-serif;
+    color: #013564;
+}
+.login-info p {
+    height: 56px;
+    font-size: 1.4rem;
+    font-family: "Plus Jakarta Sans",sans-serif;
+}
+.login-block {
+    width: 431px;
+    height: 521px;
+    margin: 0px 0px 0px 65px;
+    padding: 35px 0px 13px;
+}
+.login {
+    height: 451px;
+    width: 431px;
+    font-size: 1.2rem;
+    /* background: pink; */
+    font-family: "Poppins", sans-serif;
+}
+.login h3 {
+    height: 27px;
+    width: 100%;
+    margin: 0px 0px 22px;
+    text-align: center;
+    /* font-size: -1.1rem; */
+}
+.login span {
+    color: #0091ff;
+}
+.login-signup {
+    height: 44px;
+    margin: 0px 0px 30px;
+}
+.social-login {
+    width: 326px;
+    height: 40px;
+    margin: 0px 52.5px 40px;
+    
+}
+.toggle-base {
+    width: 222px;
+    height: 30px;
+    margin: 0px 96.5px;
+    padding: 7px 8px;
+    background: #ebf3fd;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-base .signUp {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 30px;
+    color: #0091ff;
+    border-radius: 25px;
+    height: 30px;
+    max-width: 110px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.toggle-base .Login {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 30px;
+    color: #0091ff;
+    border-radius: 25px;
+    height: 30px;
+    max-width: 110px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.toggle-base .signUp .active {
+    background-color: #0091ff;
+    color: #fff;
+    float: left;
+}
+.ankit {
+    height: 1000px;
+}

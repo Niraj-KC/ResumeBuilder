@@ -1,0 +1,125 @@
+.block1 {
+  width: 427px;
+  height: 192px;
+  color: #013564;
+}
+.three-column-wrap {
+    height: 743px;
+    width: 1230px;
+    padding: 180px 0px 0px;
+  }
+  .main-1 {
+    height: 500px;
+  }
+  .main-1-add {
+    height: 96px;
+    width: 900px;
+    margin: 0px 200px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .main-1-add h2 {
+    width: 900px;
+    font-size: 2.2rem;
+  }
+  .total-block {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .three-column {
+    width: 1300px;
+    height: 450px;
+    margin: 0px 0px 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .block-img {
+    height: 37px;
+    width: 36px;
+    margin: 0px 0px 15px;
+  }
+  .one {
+    background-image: url("../../assets/artificial-intelligence.png");
+    background-size: cover;
+  }
+.two {
+  background-image: url("../../assets/resume.png");
+  background-size: cover;
+  height: 37px;
+    width: 36px;
+    margin: 0px 0px 15px;
+}
+.three{
+  background-image: url("../../assets/color-pick.png");
+  background-size: cover;
+  height: 37px;
+    width: 36px;
+    margin: 0px 0px 15px;
+}
+.four {
+  background-image: url("../../assets/windows.png");
+  background-size: cover;
+  height: 37px;
+    width: 36px;
+    margin: 0px 0px 15px;
+}
+.five {
+  background-image: url("../../assets/files.png");
+  background-size: cover;
+  height: 37px;
+    width: 36px;
+    margin: 0px 0px 15px;
+}
+.six {
+  background-image: url("../../assets/check.png");
+  background-size: cover;
+  height: 37px;
+    width: 36px;
+    margin: 0px 0px 15px;
+}
+
+
+  .block-title {
+    width: 427px;
+    height: 40px;
+    margin: 0px 0px 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .block-para {
+    font-size: 1.2rem;
+  }
+  .btn-anker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .primary-btn {
+    background: linear-gradient(332deg, #e92085 -15.2%, #fd7521 66.64%);
+    width: 217px;
+    height: 30px;
+    padding: 15px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+  .primary-btn:hover {
+    cursor: pointer;
+  }
+  .primary-btn span {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .extra {
+    height: 200px;
+  }
+  

@@ -1,0 +1,102 @@
+.footer {
+  height: 430px;
+  width: 1280px;
+  padding: 70px 0px;
+}
+.footer-main {
+  margin-top: 500px;
+  margin-left: -75px;
+  /* background: red; */
+  width: 1250px;
+  height: 430px;
+  /* margin: 0px 19px; */
+}
+.top-footer {
+  width: 1240px;
+  height: 270px;
+  margin: 0px 0px 20px;
+  display: flex;
+}
+.footer-logo-block {
+  width: 300px;
+  height: 262px;
+  margin: 8px 0px 0px;
+  padding: 0px 25px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer-logo {
+  height: 30px;
+  width: 260px;
+  margin: 0px 0px 45px;
+}
+.footer-anker {
+  height: 49px;
+  display: inline-block;
+  width: 250px;
+  color: #551a8b;
+  font-size: 1.2rem;
+}
+.footer-anker img {
+  height: 46px;
+  width: 250px;
+}
+.footer-img2 {
+  background-image: url("../../assets/tp_stars_black.svg");
+  background-size: cover;
+  height: 50px;
+  width: 130px;
+}
+/* .footer-media {
+    height: 21px;
+    width: 310px;   
+} */
+
+.column {
+  height: 270px;
+  width: 300px;
+  padding: 0;
+}
+.mb {
+  height: 30px;
+  width: 300px;
+  margin: 0px 15px 15px 0px;
+}
+.mb a {
+    cursor: pointer;
+}
+.ul-list li {
+  list-style: none;
+  padding: 0;
+}
+.ul-list {
+  padding: 0;
+}
+.footer-med {
+  height: 50px;
+  /* background: red; */
+  width: 1240px;
+  margin: 0px 0px 60px;
+  display: flex;
+  justify-content: end;
+}
+.med-dark {
+  background-image: url("../../assets/night-mode.png");
+  background-size: cover;
+  border-radius: 50%;
+  height: 47px;
+  width: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 8px 10px 10px rgba(238, 223, 223, 0.678);
+  cursor: pointer;
+}
+.footer-end p {
+  width: 1240px;
+  height: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+}
