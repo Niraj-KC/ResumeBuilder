@@ -13,13 +13,13 @@ import Form from '../Form/Form';
 function HomePage() {
   return (
     <div className="HomePage">
-      {/* <Header />   */}
-      {/* <MainSection /> */}
-      {/* <ThreeColumnSection /> */}
-      {/* <div className="extra"></div> */}
-      {/* <CalloutSection /> */}
-      {/* <Footer /> */}
-      <Form />
+      <Header />  
+      <MainSection />
+      <ThreeColumnSection />
+      <div className="extra"></div>
+      <CalloutSection />
+      <Footer />
+      {/* <Form /> */}
     </div>
   );
 }
