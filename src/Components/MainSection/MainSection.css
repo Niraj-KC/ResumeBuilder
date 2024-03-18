@@ -10,30 +10,46 @@
   justify-content: space-between;
   margin: 0px 0px 40px;
 }
+.home-banner-right-outer a {
+  text-decoration: none;
+  color: white;
+}
 .banner-img {
   background-image: url("../../assets/home-animation.svg");
   height: 600px;
   width: 440px;
   background-size: cover;
 }
+.banner-img {
+  height: 600px;
+  width: 440px;
+  position: relative;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.banner-img1,
+.banner-img2 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden; /* Hide the back face during animation */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Add transition for smooth effect */
+}
+
 .banner-img1 {
   background-image: url("../../assets/Background-1.webp");
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-  background-position: center;
-  height: 600px;
-  width: 440px;
+  transform: rotateY(0deg); /* Initially unflipped */
 }
+
 .banner-img2 {
   background-image: url("../../assets/Background-2.webp");
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-  background-position: center;
-  height: 600px;
-  width: 440px;
+  transform: rotateY(180deg); /* Initially flipped */
+  opacity: 0; /* Initially hidden */
 }
+
 
 .heading {
   height: 120px;
@@ -43,6 +59,7 @@
   width: 730px;
   /* background-color: aqua;    */
   height: 374px;
+  /* text-decoration: none; */
 }
 .heading h1 {
   font-size: 3rem;
@@ -83,6 +100,7 @@
   width: 730px;
   height: 62px;
   margin: 0px 0px 40px;
+  text-decoration: none;
 }
 .div-cta-link {
   background: linear-gradient(332deg, #e92085 -15.2%, #fd7521 66.64%);

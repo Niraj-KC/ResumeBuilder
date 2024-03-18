@@ -12,6 +12,7 @@ import brand8 from '../../assets/brand-8.svg'
 import brand9 from '../../assets/brand-9.svg'
 import brand10 from '../../assets/brand-10.svg'
 import brand11 from '../../assets/brand-11.svg'
+import { Link } from 'react-router-dom';
 
 
 function CalloutSection() {
@@ -22,11 +23,13 @@ function CalloutSection() {
                 <h2>Let’s Land Your Dream Job Together</h2>
             </div>
             <div className="callout-main-anker">
+                <Link to="/Template_rb">
                 <a className="callout-btn-anker">
                     <div className="callout-btn">
                         <a>Start Your Resume Now</a>
                     </div>
                 </a>
+                </Link>
             </div>
             <div className="brand-wrap-div">
                 <div className="brand-wrap">

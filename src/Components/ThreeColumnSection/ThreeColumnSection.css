@@ -11,6 +11,9 @@
   .main-1 {
     height: 500px;
   }
+  .main-1 a {
+    text-decoration: none;
+  }
   .main-1-add {
     height: 96px;
     width: 900px;

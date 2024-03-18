@@ -32,6 +32,9 @@
     margin: 0px 0px 67px;
     font-size: 1.15rem;
   }
+  .callout-main-anker a {
+    text-decoration: none;
+  }
   .callout-btn {
     background: linear-gradient(332deg, #e92085 -15.2%, #fd7521 66.64%);
     width: 240px;

@@ -281,7 +281,7 @@ header {
     flex-direction: column;
 } */
 .delete-button {
-    background: url('../../assets/trash1.png')  transparent;
+    background: url('../../../assets/trash1.png')  transparent;
     background-size: cover;
     border: none;
     height: 35px;

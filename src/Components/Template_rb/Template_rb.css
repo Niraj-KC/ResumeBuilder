@@ -110,10 +110,20 @@ header {
     display: flex;
     align-items: center;
 }
-.multiple-color img {
+.multiple-color-img {
+    background-image: url("../../assets/multi-color.png");
     background-size: cover;
     width: 33px;
     height: 33px;
+    border: none;
+    padding: 0;
+    
+}
+
+#color-picker{
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
 }
 .multiple-color label {
     height: 42px;

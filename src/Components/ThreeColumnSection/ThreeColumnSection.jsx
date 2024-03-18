@@ -74,11 +74,13 @@ const ThreeColumnSection = () => {
                         </div>
                     </div>
                 </div>
+                <Link to="/Template_rb">
                 <a className="btn-anker">
                     <div className="primary-btn">
                         <span>Get Started Now</span>
                     </div>
                 </a>
+                </Link>
                 
             </div>
             

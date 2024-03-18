@@ -3,8 +3,22 @@ import './Template_rb.css';
 import mix from '../../assets/multi-color.png';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
 
+import { useState } from 'react';
+
+
 const Template_rb = () => {
-  return (
+  
+  const [colorCode, colorCodeSet] = useState("#ffffff");
+  
+  const callColorpicker = (e) => {
+    console.log("callColorpicker ", e.clientX+"px", e.clientY+"px");
+    var c = document.getElementById("color-picker");
+    c.click();
+    c.onchange = function() {
+      colorCodeSet(c.value);
+    }
+  }
+    return (
     <>
       <header>
         <div className="header-main">
@@ -32,9 +46,11 @@ const Template_rb = () => {
             <li className="item8" style={{ backgroundColor: 'rgb(245, 241, 238)' }}></li>
             <div className="multi">
               <p>Custom:</p>
-              <div className="multiple-color">
-                <img src={mix} alt="" />
-                <label htmlFor="input-color-picker">#B01C23</label>
+              <div className="multiple-color" onClick={callColorpicker}>
+                {/* <input type="color" /> */}
+                <input type="color" name="color-picker" id="color-picker"/>
+                <div className='multiple-color-img'></div>
+                <label htmlFor="input-color-picker">{colorCode}</label>
               </div>
             </div>
           </ul>

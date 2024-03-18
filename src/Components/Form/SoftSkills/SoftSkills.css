@@ -387,3 +387,9 @@ header {
     width: 510px;
     margin-top: 10px;
 }
+.chip-display {
+    width: 35vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
