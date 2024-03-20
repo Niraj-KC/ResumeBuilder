@@ -1,6 +1,7 @@
 import React from 'react'
 import './Template_rb.css';
-import mix from '../../assets/multi-color.png';
+import HeaderTemplate from '../../Utils/Header/HeaderTemplate';
+import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
 
 import { useState } from 'react';
@@ -8,7 +9,7 @@ import { useState } from 'react';
 
 const Template_rb = () => {
   
-  const [colorCode, colorCodeSet] = useState("#ffffff");
+  const [colorCode, colorCodeSet] = useState("#B01C23");
   
   const callColorpicker = (e) => {
     console.log("callColorpicker ", e.clientX+"px", e.clientY+"px");
@@ -20,11 +21,7 @@ const Template_rb = () => {
   }
     return (
     <>
-      <header>
-        <div className="header-main">
-          <div className="svg-logo"></div>
-        </div>
-      </header>
+      <HeaderTemplate />
       <div className="block">
         <h1>Select a Template</h1>
         <p>Select a color and a template to get started</p>
@@ -80,12 +77,13 @@ const Template_rb = () => {
       <div className="skip-bar">
         <Link to="/Form"><a className="skip-link">Skip for Now</a></Link>
       </div>
-      <div className="footer-container">
+      {/* <div className="footer-container">
         <div className="footer">
           <p>© 2024 ResumeBuilder.com. All rights reserved.</p>
           <a>Contact Us.</a>
         </div>
-      </div>
+      </div> */}
+      <FooterTemplate />
     </>
   )
 }

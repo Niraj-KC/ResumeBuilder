@@ -1,20 +1,13 @@
 import React from "react";
 import './Form.css'
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
-import PastJob from "./PastJob/PastJob";
-import Achivements from "./Achivements/Achivements";
-import SoftSkills from "./SoftSkills/SoftSkills";
-import TechnicalSkill from "./TechnicalSkill/TechnicalSkill";
-import Projects from "./Projects/Projects";
+import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
+import HeaderTemplate from "../../Utils/Header/HeaderTemplate";
 
 const Form = () => {
     return (
         <>
-            <header>
-                <div className="header-main">
-                    <div className="svg-logo"></div>
-                </div>
-            </header>
+            <HeaderTemplate />
             <div className="main-content">
                 <div className="main-content-pannel">
                     <div className="main-content-pannel-left">
@@ -37,14 +30,10 @@ const Form = () => {
                                         </li>
                                     </ul>
                                     <div className="editor-form-wrap">
-                                        <PersonalDetails /> 
+                                        {/* <PersonalDetails /> */}
                                         <div className="profesion-info">
                                             <div className="personal-info-main">
-                                                <PastJob />
-                                                <Achivements />
-                                                <SoftSkills />
-                                                <TechnicalSkill />
-                                                <Projects />
+                                                <ProfesionDetails />
                                             </div>
                                         </div>
 
