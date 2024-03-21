@@ -3,8 +3,37 @@ import './Form.css'
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
 import HeaderTemplate from "../../Utils/Header/HeaderTemplate";
-
+import Resume from "../Resume/Resume";
 const Form = () => {
+    var obj = {
+        "first_name": "Emily",
+        "last_name": "Johnson",
+        "phone_no": "111-222-3333",
+        "email": "emily.johnson@example.com",
+        "address": "789 Elm Street, Village, Country",
+        "social_links": [
+          "cc.com",
+          "linkedin.com/emilyjohnson"
+        ],
+        "education": [
+          {"title": "Bachelor of Science in Electrical Engineering", "year": 2010},
+          {"title": "Master of Engineering in Renewable Energy", "year": 2012}
+        ],
+        "job": [
+          {"company": "Energy Solutions Inc.", "role": "Electrical Engineer", "desp": "Designed electrical systems for renewable energy projects.", "date": "31-03-2013", "is_current": false},
+          {"company": "Renewable Power Co.", "role": "Project Manager", "desp": "Managed the implementation of large-scale solar projects.", "date": "31-03-2016", "is_current": true}
+        ],
+        "achievement": [
+          {"title": "Leadership Excellence Award", "desp": "Recognized for exemplary leadership skills in project management.", "date": "31-03-2017"}
+        ],
+        "soft_skill": ["Project Management", "Problem-solving", "Adaptability"],
+        "technical_skill": ["AutoCAD", "MATLAB", "Renewable Energy Systems"],
+        "project": [
+          {"title": "Solar Farm Installation", "desp": "Managed the installation of a 50MW solar farm project.", "link": "example.com/solar-farm"}
+        ]
+      }
+      
+
     return (
         <>
             <HeaderTemplate />
@@ -43,7 +72,7 @@ const Form = () => {
                         </div>
                     </div>
                     <div className="main-content-pannel-right">
-
+                        <Resume data={obj}/>
                     </div>
                 </div>
             </div>
