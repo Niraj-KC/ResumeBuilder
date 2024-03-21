@@ -3,11 +3,11 @@ import './HeaderTemplate.css';
 
 const HeaderTemplate = () => {
     return (
-        <header>
+        <div className='header'>
             <div className="header-main">
-                <div className="svg-logo"></div>
+                <div id="svg-logo"></div>
             </div>
-        </header>
+        </div>
     )
 }
 

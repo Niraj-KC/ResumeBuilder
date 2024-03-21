@@ -1,8 +1,8 @@
 import React from 'react'
 import './Login.css'
 import { useState } from 'react';
-import HeaderTemplate from '../../Utils/Header/HeaderTemplate';
 import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
+import HeaderTemplate from '../../Utils/HeaderTemplate/HeaderTemplate';
 
 const extra = () => {
 

@@ -19,7 +19,6 @@ const Projects = () => {
         <div>
             <div className="title-btn">
                 <div className="sl">Projects</div>
-                {/* <button className="delete-button" id="del"></button> */}
             </div>
             <div className="for-flex">
                 {projectsRows.map(row => (
@@ -56,4 +55,4 @@ const Projects = () => {
     )
 }
 
-export default Projects
+export default Projects;

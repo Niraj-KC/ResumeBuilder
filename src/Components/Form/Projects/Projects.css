@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    /* overflow-x: hidden; */
 }
 header {
     height: 26px;
@@ -136,8 +135,6 @@ header {
     color: white;
 }
 
-
-/** ========================================================================================= **/
 .template {
     height: 53px;
     width: 170px;   
@@ -194,8 +191,6 @@ header {
 .form-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    /* align-items: center; */
     margin-bottom: 12px;
 }
 
@@ -276,10 +271,6 @@ header {
     width: 20px;
     font-size: 20px;
 }
-/* .for-flex {
-    display: flex;
-    flex-direction: column;
-} */
 .delete-button {
     background: url('../../../assets/trash1.png')  transparent;
     background-size: cover;
@@ -289,20 +280,12 @@ header {
     mix-blend-mode:multiply;
     border-radius: 4px;
     cursor: pointer;
-    /* margin-top: 25px;   */
     align-content: center;
-    /* filter: brightness(1.2) saturate(0.8) hue-rotate(190deg); */
 }
-
-/***  ========================================================***/
 
 .field-wrap-profesion {
-    /* display: flex; */
     margin-top: 20px;
 }
-/* .for-align-content {
-    
-} */
 .name-and-role{
     display: flex;
     justify-content: space-between;
@@ -328,7 +311,7 @@ header {
     height: 30px;
     padding: 1px 10px;
     background: #ffffff;
-    max-width: 550x;
+    max-width: 550px;
     border: 1px solid #dee3ee;
     font-family: "Poppins",sans-serif;
     border-radius: 5px; 
@@ -382,7 +365,6 @@ header {
     margin-top: 0px;
     margin-right: 100px;
     font-size: 12px;
-    /* margin-bottom: 20px; */
 }
 .for-link input{
     width: 510px;

@@ -2,11 +2,13 @@ import React from "react";
 import './Form.css'
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
-import HeaderTemplate from "../../Utils/Header/HeaderTemplate";
+import HeaderTemplate from "../../Utils/HeaderTemplate/HeaderTemplate";
+import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
+
 
 const Form = () => {
     return (
-        <>
+        <div>
             <HeaderTemplate />
             <div className="main-content">
                 <div className="main-content-pannel">
@@ -30,7 +32,7 @@ const Form = () => {
                                         </li>
                                     </ul>
                                     <div className="editor-form-wrap">
-                                        {/* <PersonalDetails /> */}
+                                        <PersonalDetails />
                                         <div className="profesion-info">
                                             <div className="personal-info-main">
                                                 <ProfesionDetails />
@@ -42,12 +44,13 @@ const Form = () => {
                             </div>
                         </div>
                     </div>
+
                     <div className="main-content-pannel-right">
 
                     </div>
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }

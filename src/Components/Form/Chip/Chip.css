@@ -1,6 +1,5 @@
 .chip-div {
     display: block;
-    /* padding: 0px 14px 0px 0px; */
     background: rgb(29,36,202);
     background: #2a64ad;
     color: #fff;
@@ -8,7 +7,6 @@
     border: 1px solid #201658;
     justify-content: space-between;
     border-radius: 12px;
-    /* margin: 30px; */
     padding: 10px;
 
 
