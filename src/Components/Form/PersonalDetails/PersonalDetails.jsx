@@ -1,9 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './PersonalDetails.css';
 
-const PersonalDetails = () => {
-
+const PersonalDetails = ({ updatePersonalDetails }) => {
     const [educationRows, setEducationRows] = useState([{ id: 1 }]);
 
     const addEducationRow = () => {
@@ -14,6 +12,30 @@ const PersonalDetails = () => {
     const deleteEducationRow = (id) => {
         setEducationRows(educationRows.filter(row => row.id !== id));
     };
+
+    const handleInputChange = (e, id, key) => {
+        const updatedEducationRows = educationRows.map(row => {
+            if (row.id === id) {
+                return { ...row, [key]: e.target.value };
+            }
+            return row;
+        });
+        setEducationRows(updatedEducationRows);
+    };
+
+    useEffect(() => {
+        // Update parent component (ProfesionDetails) with personal details
+        const personalDetails = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            job: document.getElementById('job').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            address: document.getElementById('address').value
+            // Add more fields if needed
+        };
+        updatePersonalDetails(personalDetails);
+    }, [educationRows, updatePersonalDetails]);
 
     return (
         <div className="editor-form">
@@ -49,19 +71,6 @@ const PersonalDetails = () => {
                     <input type="text" id="address" name="address" required /><br /><br />
                 </div>
             </div>
-            <div className="social-link">
-                <div className="sl">Social Links</div>
-                <div className="form-row">
-                    <div className="field-wrap">
-                        <label htmlFor="description">Description (optional)</label>
-                        <input type="text" id="description" name="description" required /><br /><br />
-                    </div>
-                    <div className="field-wrap">
-                        <label htmlFor="link">Link/Text/Etc.</label>
-                        <input type="text" id="link" name="link" required /><br /><br />
-                    </div>
-                </div>
-            </div><br />
             <div className="education-info">
                 <div className="sl">Education</div>
                 <div className="for-flex">
@@ -69,11 +78,23 @@ const PersonalDetails = () => {
                         <div className="form-row" key={row.id}>
                             <div className="field-wrap">
                                 <label htmlFor={`educationTitle${row.id}`}>Title</label>
-                                <input type="text" id={`educationTitle${row.id}`} name={`educationTitle${row.id}`} required /><br /><br />
+                                <input
+                                    type="text"
+                                    id={`educationTitle${row.id}`}
+                                    name={`educationTitle${row.id}`}
+                                    required
+                                    onChange={(e) => handleInputChange(e, row.id, 'title')}
+                                /><br /><br />
                             </div>
                             <div className="field-wrap">
                                 <label htmlFor={`educationYear${row.id}`}>Year</label>
-                                <input type="text" id={`educationYear${row.id}`} name={`educationYear${row.id}`} required /><br /><br />
+                                <input
+                                    type="text"
+                                    id={`educationYear${row.id}`}
+                                    name={`educationYear${row.id}`}
+                                    required
+                                    onChange={(e) => handleInputChange(e, row.id, 'year')}
+                                /><br /><br />
                             </div>
                             {educationRows.length > 1 &&
                                 <button className="delete-button" onClick={() => deleteEducationRow(row.id)}></button>
@@ -87,8 +108,7 @@ const PersonalDetails = () => {
                 <div className="button">Add One More</div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default PersonalDetails;
-
