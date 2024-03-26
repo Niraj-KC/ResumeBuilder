@@ -5,6 +5,7 @@ import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
 import HeaderTemplate from "../../Utils/HeaderTemplate/HeaderTemplate";
 import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
 import Resume from "../Resume/Resume";
+import Template1 from "../Resume/Template1/Template1";
 const Form = () => {
     var obj = {
         "first_name": "Emily",
@@ -60,7 +61,7 @@ const Form = () => {
                                         </li>
                                     </ul>
                                     <div className="editor-form-wrap">
-                                        <PersonalDetails />
+                                        {/* <PersonalDetails /> */}
                                         <div className="profesion-info">
                                             <div className="personal-info-main">
                                                 <ProfesionDetails />
@@ -75,6 +76,7 @@ const Form = () => {
 
                     <div className="main-content-pannel-right">
                         <Resume data={obj}/>
+                        {/* <Template1 data={obj}/> */}
                     </div>
                 </div>
             </div>
