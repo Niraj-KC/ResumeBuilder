@@ -1,7 +1,8 @@
 import React from 'react';
 import './Resume.css'; // Import CSS file for styling
 
-const Resume = ({ data }) => {
+
+const ResumePDF = ({ data }) => {
   const {
     first_name,
     last_name,
@@ -16,6 +17,7 @@ const Resume = ({ data }) => {
     technical_skill,
     project
   } = data;
+
 
   return (
 
@@ -104,9 +106,10 @@ const Resume = ({ data }) => {
           </ul>
         </div>
 
+
       </div>
     </div>
   );
 }
 
-export default Resume;
+export default ResumePDF;

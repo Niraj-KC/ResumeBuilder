@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './SoftSkills.css';
-import { useState } from 'react';
 import Chip from '../Chip/Chip';
 
-const SoftSkills = () => {
-
+const SoftSkills = ({ updateSoftSkills }) => {
     const [softSkillsRows, setSoftSkillsRows] = useState([]);
 
     const addSoftSkillsRow = (text) => {
@@ -13,18 +11,20 @@ const SoftSkills = () => {
     };
 
     const handleKeyDown = (e) => {
-        console.log(e.keyCode);
-        console.log(e.target.value);
-        if (e.keyCode === 13 && e.target.value !== "") { // Enter key
-            addSoftSkillsRow(e.target.value);
+        if (e.keyCode === 13 && e.target.value.trim() !== "") { // Enter key
+            addSoftSkillsRow(e.target.value.trim());
             e.target.value = "";
         }
     };
 
     const deletesoftSkillRow = (id) => {
-        console.log(id);
         setSoftSkillsRows(softSkillsRows.filter(row => row.id !== id));
-    }
+    };
+
+    useEffect(() => {
+        // Update parent component (ProfesionDetails) with soft skills
+        updateSoftSkills(softSkillsRows.map(row => row.text));
+    }, [softSkillsRows, updateSoftSkills]);
 
     return (
         <div>
@@ -37,12 +37,12 @@ const SoftSkills = () => {
                 </div>
                 <div className="chip-display">
                     {softSkillsRows.map(row => (
-                        <Chip text={row.text} onClick={() => deletesoftSkillRow(row.id)}></Chip>
+                        <Chip key={row.id} text={row.text} onClick={() => deletesoftSkillRow(row.id)}></Chip>
                     ))}
                 </div>  
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SoftSkills
+export default SoftSkills;
