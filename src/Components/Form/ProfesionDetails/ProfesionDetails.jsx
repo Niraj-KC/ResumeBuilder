@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react';
 import './ProfesionDetails.css';
 import PastJob from '../PastJob/PastJob';
 import Achivements from "../Achivements/Achivements";
@@ -6,9 +6,9 @@ import SoftSkills from "../SoftSkills/SoftSkills";
 import TechnicalSkill from "../TechnicalSkill/TechnicalSkill";
 import Projects from "../Projects/Projects";
 
-const ProfesionDetails = ({ updateProfessionDetails }) => {
+const ProfesionDetails = ({ updateProfessionDetails, formData }) => {
     // State to hold profession details
-    const [professionDetails, setProfessionDetails] = React.useState({
+    const [professionDetails, setProfessionDetails] = useState({
         pastJobs: [],
         achievements: [],
         softSkills: [],
@@ -56,10 +56,26 @@ const ProfesionDetails = ({ updateProfessionDetails }) => {
         }));
     };
 
+    // Memoized updateProfessionDetails function
+    const memoizedUpdateProfessionDetails = useCallback(
+        (professionDetails) => {
+            updateProfessionDetails(professionDetails);
+        },
+        [updateProfessionDetails]
+    );
+
+    // Update profession details from formData when it changes
+    useEffect(() => {
+        if (formData) {
+            setProfessionDetails(formData);
+        }
+
+    }, [formData]);
+
     // Call updateProfessionDetails to pass the profession details to the parent component (Form)
-    React.useEffect(() => {
-        updateProfessionDetails(professionDetails);
-    }, [professionDetails, updateProfessionDetails]);
+    useEffect(() => {
+        memoizedUpdateProfessionDetails(professionDetails);
+    }, [memoizedUpdateProfessionDetails, professionDetails]);
 
     return (
         <div>
@@ -69,7 +85,7 @@ const ProfesionDetails = ({ updateProfessionDetails }) => {
             <TechnicalSkill updateTechnicalSkills={updateTechnicalSkills} />
             <Projects updateProjects={updateProjects} />
         </div>
-    )
-}
+    );
+};
 
 export default ProfesionDetails;

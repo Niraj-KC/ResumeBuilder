@@ -19,19 +19,24 @@ const PastJob = ({ updatePastJobs }) => {
 
     // Function to handle change in input fields
     const handleChange = (id, key, value) => {
-        const updatedPastJobs = pastJobs.map(job => {
-            if (job.id === id) {
-                return { ...job, [key]: value };
-            }
-            return job;
+        setPastJobs(prevPastJobs => {
+            return prevPastJobs.map(job => {
+                if (job.id === id) {
+                    return { ...job, [key]: value };
+                }
+                return job;
+            });
         });
-        setPastJobs(updatedPastJobs);
     };
 
-    // Update parent component (ProfesionDetails) with past job details
     useEffect(() => {
-        updatePastJobs(pastJobs);
+        // Only call updatePastJobs if the pastJobs state has changed
+        if (JSON.stringify(pastJobs) !== JSON.stringify(updatePastJobs)) {
+            updatePastJobs(pastJobs);
+        }
     }, [pastJobs, updatePastJobs]);
+
+
 
     return (
         <div>

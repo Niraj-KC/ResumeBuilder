@@ -1,9 +1,12 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import './Form.css'
+import { BASE_URL } from "../../Utils/config/config";
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
 import HeaderTemplate from "../../Utils/Header/HeaderTemplate";
 import ResumePDF from "../Resume/Resume";
+import axios from "axios";
 
 const Form = () => {
     var obj = {
@@ -34,6 +37,8 @@ const Form = () => {
         ]
     }
 
+
+
     const [formData, setFormData] = useState({});
 
     // Function to update profession details state
@@ -50,6 +55,27 @@ const Form = () => {
         // Here you can submit formData to your desired endpoint
         console.log(formData);
     }
+
+
+    useEffect(() => {
+        // Simulate fetching data from server
+        fetchData(); // Call the fetch function
+    }, []);
+    const fetchData = async () => {
+        try {
+            // Replace the URL with your actual API endpoint
+
+            const response = axios.get(`/resume/2`);
+            console.log("response", response)
+            // if (response.ok) {
+            //     const data = await response.json();
+            //     setFormData(data); // Set the fetched data to the state
+            // }
+            // else throw new Error('Failed to fetch data');
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
     return (
         <>
             <HeaderTemplate />
@@ -80,7 +106,7 @@ const Form = () => {
                                             {/* <PersonalDetails updatePersonalDetails={updateFormData} /> */}
                                             <div className="profesion-info">
                                                 <div className="personal-info-main">
-                                                    <ProfesionDetails updateProfessionDetails={updateFormData} />
+                                                    <ProfesionDetails updateProfessionDetails={updateFormData} formData={formData} />
                                                 </div>
                                             </div>
 
@@ -95,7 +121,7 @@ const Form = () => {
                             </div>
                         </div>
                         <div className="main-content-pannel-right">
-                            <ResumePDF data={obj} />
+                            {/* <ResumePDF data={formData} /> */}
                         </div>
                     </div>
                 </div>
