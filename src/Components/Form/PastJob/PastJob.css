@@ -1,157 +1,150 @@
+
 .field-wrap {
-    height: 51px;
-    width: 247px;
+  height: 51px;
+  width: 247px;
 }
-.field-wrap  label {
-    margin: 0px 0px 4px;
-    font-size: 12px;
-    font-family: "Plus Jakarta Sans",sans-serif;
-    line-height: 16px;
-    display: inline-block;
+.field-wrap label {
+  margin: 0px 0px 4px;
+  font-size: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 16px;
+  /* display: inline-block; */
 }
 .field-wrap input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 220px;
-    width: 100%;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px;
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 220px;
+  width: 100%;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
 }
 .field-wrap input:focus {
-    border-color: #246eed;
+  border-color: #246eed;
 }
 
 .sl {
-    font-family: "Poppins",sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color:#2a64ad;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #2a64ad;
 }
 .form-row1 {
-    display: flex;
+  display: flex;
 }
 .main-btn {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 12px;
-    cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
 }
 .plus-sign {
-    width: 20px;
-    font-size: 20px;
-}
-/* .for-flex {
-    display: flex;
-    flex-direction: column;
-} */
-.delete-button {
-    background: url('../../../assets/trash1.png')  transparent;
-    background-size: cover;
-    border: none;
-    height: 35px;
-    width: 35px;
-    mix-blend-mode:multiply;
-    border-radius: 4px;
-    cursor: pointer;
-    /* margin-top: 25px;   */
-    align-content: center;
-    /* filter: brightness(1.2) saturate(0.8) hue-rotate(190deg); */
+  width: 20px;
+  font-size: 20px;
 }
 
-/***  ========================================================***/
+.delete-button {
+  background: url("../../../assets/trash1.png") transparent;
+  background-size: cover;
+  border: none;
+  height: 35px;
+  width: 35px;
+  mix-blend-mode: multiply;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  align-content: center;
+}
 
 .field-wrap-profesion {
-    /* display: flex; */
-    margin-top: 20px;
+
+  margin-top: 20px;
 }
-/* .for-align-content {
-    
-} */
-.name-and-role{
-    display: flex;
-    justify-content: space-between;
+
+.name-and-role {
+  display: flex;
+  justify-content: space-between;
 }
 .name-and-role input {
-    width: 200px;
-    margin-right: 20px;
+  width: 200px;
+  margin-right: 20px;
 }
 .past-date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 .past-date label {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 .past-date input {
-    width: 200px;
-    margin-right: 10px;
+  width: 200px;
+  margin-right: 10px;
 }
 .field-wrap-profesion input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 550x;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px; 
-    align-items: center;
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 550px;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  align-items: center;
 }
 .field-wrap-achivements {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .field-wrap-achivements input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 145px;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px; 
-    align-items: center;
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 145px;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  align-items: center;
 }
 .field-wrap-inp {
-    margin-top: 30px;
-    font-size: 12px;
+  margin-top: 30px;
+  font-size: 12px;
 }
 .field-wrap-inp textarea {
-    height: 100px;
-    margin-top: 10px;
-    padding: 1px 10px;
-    background: #ffffff;
-    width: 510px;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px; 
-    display: flex;
+  height: 100px;
+  margin-top: 10px;
+  padding: 1px 10px;
+  background: #ffffff;
+  width: 510px;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  display: flex;
 }
 .bdr input:focus {
-    outline: none;
+  outline: none;
 }
 .bdr textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 .title-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .fon-link {
-    display: flex;
+  display: flex;
 }
 .for-link label {
-    margin-top: 0px;
-    margin-right: 100px;
-    /* margin-bottom: 20px; */
+  margin-top: 0px;
+  margin-right: 100px;
+ 
 }
-.for-link input{
-    width: 510px;
-    margin-top: 10px;
+.for-link input {
+  width: 510px;
+  margin-top: 10px;
 }

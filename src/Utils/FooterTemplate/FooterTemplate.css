@@ -1,15 +1,12 @@
-.footer-container {
+#footer-cont {
     background-color: #023b5e;
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.footer {
-    height: 13px; 
-    margin: 0px 62px;
+#footer1 {
     padding: 14px;
-    display: flex;
     font-family: "Poppins",sans-serif;
     display: flex;
     justify-content: center;

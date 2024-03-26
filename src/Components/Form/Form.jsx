@@ -4,8 +4,10 @@ import './Form.css'
 import { BASE_URL } from "../../Utils/config/config";
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
+import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
+import Resume from "../Resume/Resume";
+import Template1 from "../Resume/Template1/Template1";
 import HeaderTemplate from "../../Utils/Header/HeaderTemplate";
-import ResumePDF from "../Resume/Resume";
 import axios from "axios";
 
 const Form = () => {
@@ -77,7 +79,7 @@ const Form = () => {
         }
     };
     return (
-        <>
+        <div>
             <HeaderTemplate />
             <form action="" method="post" onSubmit={handleSubmit}>
 
@@ -123,11 +125,19 @@ const Form = () => {
                         <div className="main-content-pannel-right">
                             {/* <ResumePDF data={formData} /> */}
                         </div>
+
                     </div>
+
+                    <div className="main-content-pannel-right">
+                        <Resume data={obj}/>
+                        {/* <Template1 data={obj}/> */}
+                    </div>
+
                 </div>
             </form>
 
         </>
+
 
     )
 }

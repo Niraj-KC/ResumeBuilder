@@ -1,6 +1,6 @@
 import React from 'react'
 import './Template_rb.css';
-import HeaderTemplate from '../../Utils/Header/HeaderTemplate';
+import HeaderTemplate from '../../Utils/HeaderTemplate/HeaderTemplate';
 import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
 

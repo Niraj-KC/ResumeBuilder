@@ -3,10 +3,12 @@ import React from 'react'
 import './Login.css'
 import { BASE_URL } from "../../Utils/config/config.js"
 import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
-import HeaderTemplate from '../../Utils/Header/HeaderTemplate';
+
 import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
+import HeaderTemplate from '../../Utils/HeaderTemplate/HeaderTemplate';
 
 const extra = () => {
 
