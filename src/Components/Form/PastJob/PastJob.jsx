@@ -1,40 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import './PastJob.css';
+import { useDispatch, useSelector } from "react-redux";
 
-const PastJob = ({ updatePastJobs }) => {
-    const [pastJobs, setPastJobs] = useState([
-        { id: 1, company: '', role: '', fromDate: '', toDate: '', description: '' }
-    ]);
+import './PastJob.css';
+import { updatePastJobs } from '../../../state/action-creator/actions';
+
+const PastJob = () => {
+    const jobs = useSelector(state => state.formData.job);
+    const dispatch = useDispatch();
 
     // Function to add a new row for past job
     const addPastjobRow = () => {
-        const newId = pastJobs.length + 1;
-        setPastJobs([...pastJobs, { id: newId, company: '', role: '', fromDate: '', toDate: '', description: '' }]);
+        dispatch(updatePastJobs([...jobs, { company: '', role: '', fromDate: '', toDate: '', description: '' }]));
     };
 
     // Function to delete a row for past job
-    const deletePastjobRow = (id) => {
-        setPastJobs(pastJobs.filter(row => row.id !== id));
+    const deletePastjobRow = (idx) => {
+        dispatch(updatePastJobs(jobs.filter((_, index) => index !== idx)));
     };
 
     // Function to handle change in input fields
-    const handleChange = (id, key, value) => {
-        setPastJobs(prevPastJobs => {
-            return prevPastJobs.map(job => {
-                if (job.id === id) {
-                    return { ...job, [key]: value };
-                }
-                return job;
-            });
-        });
+    const handleChange = (idx, key, value) => {
+        // console.log("k:", key, "v", value);
+        var updatedJobs = [...jobs];
+        updatedJobs[idx] = { ...updatedJobs[idx], [key]: value };
+        // console.log("up-job: ", updatedJobs[idx]);
+        dispatch(updatePastJobs(updatedJobs));
     };
-
-    useEffect(() => {
-        // Only call updatePastJobs if the pastJobs state has changed
-        if (JSON.stringify(pastJobs) !== JSON.stringify(updatePastJobs)) {
-            updatePastJobs(pastJobs);
-        }
-    }, [pastJobs, updatePastJobs]);
 
 
 
@@ -44,70 +34,70 @@ const PastJob = ({ updatePastJobs }) => {
                 <div className="sl">Past Job</div>
             </div>
             <div className="for-flex">
-                {pastJobs.map(row => (
-                    <div className="field-wrap-profesion" key={row.id}>
+                {jobs.map((job, idx) => (
+                    <div className="field-wrap-profesion" key={idx}>
                         <div className="name-and-role">
                             <div className="field-wrap bdr">
-                                <label htmlFor={`companyName${row.id}`}>Company Name</label>
+                                <label htmlFor={`companyName${idx}`}>Company Name</label>
                                 <input
                                     type="text"
                                     className="no-outline"
-                                    id={`companyName${row.id}`}
-                                    name={`companyName${row.id}`}
-                                    value={row.company}
-                                    onChange={(e) => handleChange(row.id, 'company', e.target.value)}
+                                    id={`companyName${idx}`}
+                                    name={`companyName${idx}`}
+                                    value={job.company}
+                                    onChange={(e) => handleChange(idx, 'company', e.target.value)}
                                     required
                                 />
                             </div>
                             <div className="field-wrap bdr">
-                                <label htmlFor={`companyRole${row.id}`}>Role</label>
+                                <label htmlFor={`companyRole${idx}`}>Role</label>
                                 <input
                                     type="text"
-                                    id={`companyRole${row.id}`}
-                                    name={`companyRole${row.id}`}
-                                    value={row.role}
-                                    onChange={(e) => handleChange(row.id, 'role', e.target.value)}
+                                    id={`companyRole${idx}`}
+                                    name={`companyRole${idx}`}
+                                    value={job.role}
+                                    onChange={(e) => handleChange(idx, 'role', e.target.value)}
                                     required
                                 />
                             </div>
                         </div>
                         <div className="past-date">
                             <div className="field-wrap bdr">
-                                <label htmlFor={`fromDate${row.id}`}>From</label>
+                                <label htmlFor={`fromDate${idx}`}>From</label>
                                 <input
                                     type="date"
-                                    id={`fromDate${row.id}`}
-                                    name={`fromDate${row.id}`}
-                                    value={row.fromDate}
-                                    onChange={(e) => handleChange(row.id, 'fromDate', e.target.value)}
+                                    id={`fromDate${idx}`}
+                                    name={`fromDate${idx}`}
+                                    value={job.fromDate}
+                                    onChange={(e) => handleChange(idx, 'fromDate', e.target.value)}
                                     required
                                 />
                             </div>
                             <div className="field-wrap bdr">
-                                <label htmlFor={`toDate${row.id}`}>To</label>
+                                <label htmlFor={`toDate${idx}`}>To</label>
                                 <input
                                     type="date"
-                                    id={`toDate${row.id}`}
-                                    name={`toDate${row.id}`}
-                                    value={row.toDate}
-                                    onChange={(e) => handleChange(row.id, 'toDate', e.target.value)}
+                                    id={`toDate${idx}`}
+                                    name={`toDate${idx}`}
+                                    value={job.toDate}
+                                    onChange={(e) => handleChange(idx, 'toDate', e.target.value)}
                                     required
                                 />
                             </div>
                         </div>
                         <div className="field-wrap-inp bdr">
-                            <label htmlFor={`description${row.id}`}>Description</label>
+                            <label htmlFor={`description${idx}`}>Description</label>
                             <textarea
                                 type="text"
-                                id={`description${row.id}`}
-                                name={`description${row.id}`}
-                                value={row.description}
-                                onChange={(e) => handleChange(row.id, 'description', e.target.value)}
+                                id={`description${idx}`}
+                                name={`description${idx}`}
+                                value={job.description}
+                                onChange={(e) => handleChange(idx, 'description', e.target.value)}
                                 required
                             ></textarea>
                         </div>
-                        {pastJobs.length > 1 &&
-                            <button className="delete-button" onClick={() => deletePastjobRow(row.id)}>-</button>
+                        {jobs.length > 1 &&
+                            <button className="delete-button" onClick={() => deletePastjobRow(idx)}>-</button>
                         }
                     </div>
                 ))}

@@ -1,31 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.css';
 
-const Projects = ({ updateProjects }) => {
-    const [projectsRows, setProjectRow] = useState([{ id: 1, title: '', date: '', description: '', link: '' }]);
+import { useDispatch, useSelector } from "react-redux";
+import { updateProjects } from '../../../state/action-creator/actions';
+
+const Projects = () => {
+    const dispatch = useDispatch();
+    const projects = useSelector(state => state.formData.project);
+
+    // const [projectsRows, setProjectRow] = useState([{ id: 1, title: '', date: '', description: '', link: '' }]);
 
     const addProjectRow = () => {
-        const newId = projectsRows.length + 1;
-        setProjectRow([...projectsRows, { id: newId, title: '', date: '', description: '', link: '' }]);
+        // const newId = projects.length + 1;
+        // setProjectRow([...projects, { id: newId, title: '', date: '', description: '', link: '' }]);
+        dispatch(updateProjects([...projects, { title: '', date: '', description: '', link: '' }]))
     };
 
-    const deleteProjectRow = (id) => {
-        setProjectRow(projectsRows.filter(row => row.id !== id));
+    const deleteProjectRow = (idx) => {
+        // setProjectRow(projects.filter(row => idx !== id));
+        dispatch(updateProjects(projects.filter((_, index) => index !== idx)))
     };
 
-    const handleChange = (id, key, value) => {
-        const updatedProjects = projectsRows.map(project => {
-            if (project.id === id) {
-                return { ...project, [key]: value };
-            }
-            return project;
-        });
-        setProjectRow(updatedProjects);
+    const handleChange = (idx, key, value) => {
+        // console.log("k:", key, "v", value);
+        var updatedProjects = [...projects];
+        updatedProjects[idx] = { ...updatedProjects[idx], [key]: value };
+        // console.log("up-job: ", updatedJobs[idx]);
+        dispatch(updateProjects(updatedProjects));
     };
 
-    useEffect(() => {
-        updateProjects(projectsRows);
-    }, [projectsRows, updateProjects]);
 
     return (
         <div>
@@ -33,56 +36,56 @@ const Projects = ({ updateProjects }) => {
                 <div className="sl">Projects</div>
             </div>
             <div className="for-flex">
-                {projectsRows.map(row => (
-                    <div className="field-wrap-profesion" key={row.id}>
+                {projects.map((project, idx) => (
+                    <div className="field-wrap-profesion" key={idx}>
                         <div className="name-and-role">
                             <div className="field-wrap bdr">
-                                <label htmlFor={`projectTitle${row.id}`}>Title</label>
+                                <label htmlFor={`projectTitle${idx}`}>Title</label>
                                 <input
                                     type="text"
-                                    id={`projectTitle${row.id}`}
-                                    name={`projectTitle${row.id}`}
-                                    value={row.title}
-                                    onChange={(e) => handleChange(row.id, 'title', e.target.value)}
+                                    id={`projectTitle${idx}`}
+                                    name={`projectTitle${idx}`}
+                                    value={project.title}
+                                    onChange={(e) => handleChange(idx, 'title', e.target.value)}
                                     required
                                 />
                             </div>
                             <div className="field-wrap bdr">
-                                <label htmlFor={`projectDate${row.id}`}>Date</label>
+                                <label htmlFor={`projectDate${idx}`}>Date</label>
                                 <input
-                                    type="text"
-                                    id={`projectDate${row.id}`}
-                                    name={`projectDate${row.id}`}
-                                    value={row.date}
-                                    onChange={(e) => handleChange(row.id, 'date', e.target.value)}
+                                    type="date"
+                                    id={`projectDate${idx}`}
+                                    name={`projectDate${idx}`}
+                                    value={project.date}
+                                    onChange={(e) => handleChange(idx, 'date', e.target.value)}
                                     required
                                 />
                             </div>
                         </div>
                         <div className="field-wrap-inp bdr">
-                            <label htmlFor={`projectDesc${row.id}`}>Description</label>
+                            <label htmlFor={`projectDesc${idx}`}>Description</label>
                             <textarea
                                 type="text"
-                                id={`projectDesc${row.id}`}
-                                name={`projectDesc${row.id}`}
-                                value={row.description}
-                                onChange={(e) => handleChange(row.id, 'description', e.target.value)}
+                                id={`projectDesc${idx}`}
+                                name={`projectDesc${idx}`}
+                                value={project.description}
+                                onChange={(e) => handleChange(idx, 'description', e.target.value)}
                                 required
                             ></textarea><br />
                         </div>
                         <div className="for-link">
-                            <label htmlFor={`projectLink${row.id}`}>Link</label><br />
+                            <label htmlFor={`projectLink${idx}`}>Link</label><br />
                             <input
                                 type="text"
-                                id={`projectLink${row.id}`}
-                                name={`projectLink${row.id}`}
-                                value={row.link}
-                                onChange={(e) => handleChange(row.id, 'link', e.target.value)}
+                                id={`projectLink${idx}`}
+                                name={`projectLink${idx}`}
+                                value={project.link}
+                                onChange={(e) => handleChange(idx, 'link', e.target.value)}
                                 required
                             />
                         </div>
-                        {projectsRows.length > 1 &&
-                            <button className="delete-button" onClick={() => deleteProjectRow(row.id)}>-</button>
+                        {projects.length > 1 &&
+                            <button className="delete-button" onClick={() => deleteProjectRow(idx)}>-</button>
                         }
                     </div>
                 ))}

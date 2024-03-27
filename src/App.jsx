@@ -19,9 +19,9 @@ function App() {
       {/* <Fragment> */}
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route exact path='/' element={<PrivateRoute />}>
-          <Route exact path='/' element={<HomePage />} />
-        </Route>
+        {/* <Route exact path='/' element={<PrivateRoute />}> */}
+        <Route exact path='/' element={<HomePage />} />
+        {/* </Route> */}
         <Route path='/Template_rb' element={<Template_rb />} />
         <Route path='/Form' element={<Form />} />
       </Routes>

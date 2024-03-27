@@ -2,29 +2,23 @@ import React, { useState, useEffect } from 'react';
 import './TechnicalSkill.css';
 import Chip from '../Chip/Chip';
 
-const TechnicalSkill = ({ updateTechnicalSkills }) => {
-    const [technicalSkillsRows, setTechnicalSkillsRow] = useState([]);
-
-    const addTechnicalSkillsRow = (text) => {
-        const newId = technicalSkillsRows.length + 1;
-        setTechnicalSkillsRow([...technicalSkillsRows, { id: newId, text: text }]);
-    };
+import { useDispatch, useSelector } from "react-redux";
+import { updateTechnicalSkills } from '../../../state/action-creator/actions';
+const TechnicalSkill = () => {
+    const dispatch = useDispatch();
+    const technicalSkills = useSelector(state => state.formData.technical_skill);
 
     const handleKeyDown = (e) => {
-        if (e.keyCode === 13 && e.target.value.trim() !== "") { // Enter key
-            addTechnicalSkillsRow(e.target.value.trim());
+        const val = e.target.value.trim();
+        if (e.keyCode === 13 && val !== "") { // Enter key
+            dispatch(updateTechnicalSkills([...technicalSkills, val]))
             e.target.value = "";
         }
     };
 
-    const deleteTechnicalSkillsRow = (id) => {
-        setTechnicalSkillsRow(technicalSkillsRows.filter(row => row.id !== id));
+    const deleteTechnicalSkillsRow = (idx) => {
+        dispatch(updateTechnicalSkills(technicalSkills.filter((_, index) => index !== idx)))
     };
-
-    useEffect(() => {
-        // Update parent component (ProfesionDetails) with technical skills
-        updateTechnicalSkills(technicalSkillsRows.map(row => row.text));
-    }, [technicalSkillsRows, updateTechnicalSkills]);
 
     return (
         <div>
@@ -36,8 +30,8 @@ const TechnicalSkill = ({ updateTechnicalSkills }) => {
                     </div>
                 </div>
                 <div className="chip-display">
-                    {technicalSkillsRows.map(row => (
-                        <Chip key={row.id} text={row.text} onClick={() => deleteTechnicalSkillsRow(row.id)}></Chip>
+                    {technicalSkills.map((skill, idx) => (
+                        <Chip key={idx} text={skill} onClick={() => deleteTechnicalSkillsRow(idx)} />
                     ))}
                 </div>
             </div>

@@ -2,29 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './SoftSkills.css';
 import Chip from '../Chip/Chip';
 
-const SoftSkills = ({ updateSoftSkills }) => {
-    const [softSkillsRows, setSoftSkillsRows] = useState([]);
+import { useDispatch, useSelector } from "react-redux";
+import { updateSoftSkills } from '../../../state/action-creator/actions';
 
-    const addSoftSkillsRow = (text) => {
-        const newId = softSkillsRows.length + 1;
-        setSoftSkillsRows([...softSkillsRows, { id: newId, text: text }]);
-    };
+const SoftSkills = () => {
+    const dispatch = useDispatch();
+    const softSkills = useSelector(state => state.formData.soft_skill);
 
     const handleKeyDown = (e) => {
-        if (e.keyCode === 13 && e.target.value.trim() !== "") { // Enter key
-            addSoftSkillsRow(e.target.value.trim());
+        const val = e.target.value.trim();
+        if (e.keyCode === 13 && val !== "") { // Enter key
+            dispatch(updateSoftSkills([...softSkills, val]))
             e.target.value = "";
         }
     };
 
-    const deletesoftSkillRow = (id) => {
-        setSoftSkillsRows(softSkillsRows.filter(row => row.id !== id));
+    const deletesoftSkillRow = (idx) => {
+        dispatch(updateSoftSkills(softSkills.filter((_, index) => index !== idx)));
     };
-
-    useEffect(() => {
-        // Update parent component (ProfesionDetails) with soft skills
-        updateSoftSkills(softSkillsRows.map(row => row.text));
-    }, [softSkillsRows, updateSoftSkills]);
 
     return (
         <div>
@@ -36,10 +31,10 @@ const SoftSkills = ({ updateSoftSkills }) => {
                     </div>
                 </div>
                 <div className="chip-display">
-                    {softSkillsRows.map(row => (
-                        <Chip key={row.id} text={row.text} onClick={() => deletesoftSkillRow(row.id)}></Chip>
+                    {softSkills.map((skill, idx) => (
+                        <Chip key={idx} text={skill} onClick={() => deletesoftSkillRow(idx)}></Chip>
                     ))}
-                </div>  
+                </div>
             </div>
         </div>
     );

@@ -1,19 +1,33 @@
 import React from 'react'
 import './Achivements.css';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateAchievements } from '../../../state/action-creator/actions';
 
 const Achivements = () => {
-    
-    const [AchivementRow, setAchivementRow] = useState([{ id: 1 }]);
+    const dispatch = useDispatch();
+    const achivements = useSelector(state => state.formData.achievement);
+
+    // const [AchivementRow, setAchivementRow] = useState([{ id: 1 }]);
 
     const addAchivementRow = () => {
-        const newId = AchivementRow.length + 1;
-        setAchivementRow([...AchivementRow, { id: newId }]);
+        // const newId = achivements.length + 1;
+        // setAchivementRow([...achivements, { id: newId }]);
+        dispatch(updateAchievements([...achivements, { "title": "", "desp": "", "date": "" }]))
     }
 
-    const deleteAchivementRow = (id) => {
-        setAchivementRow(AchivementRow.filter(row => row.id !== id));
+    const deleteAchivementRow = (idx) => {
+        // setAchivementRow(achivements.filter(row => idx !== id));
+        dispatch(updateAchievements(achivements.filter((_, index) => index !== idx)));
     }
+
+    const handleChange = (idx, key, value) => {
+        // console.log("k:", key, "v", value);
+        var updatedAchievements = [...achivements];
+        updatedAchievements[idx] = { ...updatedAchievements[idx], [key]: value };
+        // console.log("up-job: ", updatedJobs[idx]);
+        dispatch(updateAchievements(updatedAchievements));
+    };
 
     return (
         <div>
@@ -21,24 +35,33 @@ const Achivements = () => {
                 <div className="sl">Achivements</div>
             </div>
             <div className="for-flex">
-                {AchivementRow.map(row => (
-                    <div className="field-wrap-profesion" key={row.id}>
+                {achivements.map((achivement, idx) => (
+                    <div className="field-wrap-profesion" key={idx}>
                         <div className="name-and-role">
                             <div className="field-wrap bdr">
-                                <label htmlFor={`AchivementTitle${row.id}`}>Title</label>
-                                <input type="text" id={`AchivementTitle${row.id}`} name={`AchivementTitle${row.id}`} required />
+                                <label htmlFor={`AchivementTitle${idx}`}>Title</label>
+                                <input type="text"
+                                    id={`AchivementTitle${idx}`}
+                                    name={`AchivementTitle${idx}`}
+                                    onChange={(e) => handleChange(idx, 'title', e.target.value)}
+                                    value={achivement.title}
+                                    required />
                             </div>
                             <div className="field-wrap bdr">
-                                <label htmlFor={`AchivementDate${row.id}`}>Date</label>
-                                <input type="text" id={`AchivementDate${row.id}`} name={`AchivementDate${row.id}`} required />
+                                <label htmlFor={`AchivementDate${idx}`}>Date</label>
+                                <input type="date" id={`AchivementDate${idx}`} name={`AchivementDate${idx}`}
+                                    value={achivement.date}
+                                    onChange={(e) => handleChange(idx, 'date', e.target.value)} required />
                             </div>
                         </div>
                         <div className="field-wrap-inp bdr">
-                            <label htmlFor={`AchivementDesc${row.id}`}>Description</label>
-                            <textarea type="text" id={`AchivementDesc${row.id}`} name={`AchivementDesc${row.id}`} required></textarea>
+                            <label htmlFor={`AchivementDesc${idx}`}>Description</label>
+                            <textarea type="text" id={`AchivementDesc${idx}`} name={`AchivementDesc${idx}`}
+                                value={achivement.desp}
+                                onChange={(e) => handleChange(idx, 'desp', e.target.value)} required></textarea>
                         </div>
-                        {AchivementRow.length > 1 &&
-                            <button className="delete-button" onClick={() => deleteAchivementRow(row.id)}></button>
+                        {achivements.length > 1 &&
+                            <button className="delete-button" onClick={() => deleteAchivementRow(idx)}></button>
                         }
                     </div>
                 ))}

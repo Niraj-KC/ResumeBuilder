@@ -43,7 +43,7 @@ const extra = () => {
                     .then(data => {
                         console.log("#reg-res: ", data);
                         if (data.response_data.is_authenticated) {
-                            setLoggedIn = true;
+                            setLoggedIn(true);
                             localStorage.setItem("AppUser", true);
                             navigate("/");
                         }
