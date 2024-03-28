@@ -43,8 +43,9 @@ const extra = () => {
                     .then(data => {
                         console.log("#reg-res: ", data);
                         if (data.response_data.is_authenticated) {
+                            console.log("data", data);
                             setLoggedIn(true);
-                            localStorage.setItem("AppUser", true);
+                            localStorage.setItem("AppUser", JSON.stringify(data.response_data.user));
                             navigate("/");
                         }
                     })
@@ -67,6 +68,11 @@ const extra = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log("#reg-res: ", data);
+                        if (data.response_data.created) {
+                            setLoggedIn(true);
+                            localStorage.setItem("AppUser", JSON.stringify(data.response_data.user));
+                            navigate("/");
+                        }
                     })
 
             } catch (err) {

@@ -8,9 +8,9 @@ import { Router, Route, Routes, Navigate, Outlet } from 'react-router-dom'
 
 function App() {
   const PrivateRoute = () => {
-    const isLoggedIn = localStorage.getItem("AppUser");
-    console.log("#isLoggedIn", isLoggedIn);
-    return isLoggedIn ? <Outlet /> : <Navigate to="/login" replace />;
+    const user = JSON.parse(localStorage.getItem("AppUser"));
+    console.log("#user", user);
+    return user ? <Outlet /> : <Navigate to="/login" replace />;
   };
 
   return (
@@ -19,9 +19,9 @@ function App() {
       {/* <Fragment> */}
       <Routes>
         <Route path='/login' element={<Login />} />
-        {/* <Route exact path='/' element={<PrivateRoute />}> */}
+        <Route exact path='/' element={<PrivateRoute />}>
         <Route exact path='/' element={<HomePage />} />
-        {/* </Route> */}
+        </Route>
         <Route path='/Template_rb' element={<Template_rb />} />
         <Route path='/Form' element={<Form />} />
       </Routes>

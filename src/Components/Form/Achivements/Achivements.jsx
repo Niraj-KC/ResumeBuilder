@@ -1,6 +1,5 @@
 import React from 'react'
 import './Achivements.css';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAchievements } from '../../../state/action-creator/actions';
 

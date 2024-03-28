@@ -51,8 +51,8 @@ const Form = () => {
                                                 <span className="progress-label">Profession Details</span>
                                             </li>
                                         </ul> */}
-                                        {/* <Stepper activeStep={1}>
-                                            <Step label="Personal Details" style={{ activeBgColor: 'blue' }} />
+                                        {/* <Stepper activeStep={2}>
+                                            <Step label="Personal Details" style={{ backgroundColor: 'blue', completedBgColor: 'green' }} completed={true} />
                                             <Step label="Career Details" />
                                         </Stepper> */}
 
