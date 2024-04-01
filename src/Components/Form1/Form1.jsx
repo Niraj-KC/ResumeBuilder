@@ -57,7 +57,7 @@ const Form1 = () => {
   const dispatch = useDispatch();
   const formData = useSelector(state => state.formData);
 
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(4);
   const sx = {
     "& .MuiStepLabel-root .Mui-completed": {
       color: "green"
@@ -116,56 +116,56 @@ const Form1 = () => {
                   </div>
                 </div>
 
-                
-                  <div className="editor-area-blueline">
-                    <Box sx={{ maxWidth: 400 }}>
-                      <Stepper activeStep={activeStep} orientation="vertical">
-                        {steps.map((step, index) => (
-                          <Step key={step.label} sx={sx}>
-                            <StepLabel
-                              optional={
-                                index === steps.length - 1 ? (
-                                  <Typography variant="caption">Last step</Typography>
-                                ) : null
-                              }
-                            >
-                              {step.label}
-                            </StepLabel>
-                            <StepContent>
-                              {step.component}
-                              <Box sx={{ mb: 2 }}>
-                                <div>
-                                  <Button
-                                    variant="contained"
-                                    onClick={activeStep === steps.length - 1 ? handleSubmit : handleNext}
-                                    sx={{ mt: 1, mr: 1 }}
-                                  >
-                                    {activeStep === steps.length - 1 ? 'Submit' : 'Continue'}
-                                  </Button>
-                                  <Button
-                                    disabled={activeStep === 0}
-                                    onClick={handleBack}
-                                    sx={{ mt: 1, mr: 1 }}
-                                  >
-                                    Back
-                                  </Button>
-                                </div>
-                              </Box>
-                            </StepContent>
-                          </Step>
-                        ))}
-                      </Stepper>
-                      {activeStep === steps.length && (
-                        <Paper square elevation={0} sx={{ p: 3 }}>
-                          <Typography>All steps completed - you&apos;re finished</Typography>
-                          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                            Reset
-                          </Button>
-                        </Paper>
-                      )}
-                    </Box>
-                  </div>
-                
+
+                <div className="editor-area-blueline">
+                  <Box sx={{ maxWidth: 400 }}>
+                    <Stepper activeStep={activeStep} orientation="vertical">
+                      {steps.map((step, index) => (
+                        <Step key={step.label} sx={sx}>
+                          <StepLabel
+                            optional={
+                              index === steps.length - 1 ? (
+                                <Typography variant="caption">Last step</Typography>
+                              ) : null
+                            }
+                          >
+                            {step.label}
+                          </StepLabel>
+                          <StepContent>
+                            {step.component}
+                            <Box sx={{ mb: 2 }}>
+                              <div>
+                                <Button
+                                  variant="contained"
+                                  onClick={activeStep === steps.length - 1 ? handleSubmit : handleNext}
+                                  sx={{ mt: 1, mr: 1 }}
+                                >
+                                  {activeStep === steps.length - 1 ? 'Submit' : 'Continue'}
+                                </Button>
+                                <Button
+                                  disabled={activeStep === 0}
+                                  onClick={handleBack}
+                                  sx={{ mt: 1, mr: 1 }}
+                                >
+                                  Back
+                                </Button>
+                              </div>
+                            </Box>
+                          </StepContent>
+                        </Step>
+                      ))}
+                    </Stepper>
+                    {activeStep === steps.length && (
+                      <Paper square elevation={0} sx={{ p: 3 }}>
+                        <Typography>All steps completed - you&apos;re finished</Typography>
+                        <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                          Reset
+                        </Button>
+                      </Paper>
+                    )}
+                  </Box>
+                </div>
+
               </div>
             </div>
             <div className="main-div-pannel">

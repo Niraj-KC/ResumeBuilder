@@ -1,130 +1,179 @@
 .field-wrap {
-    height: 51px;
-    width: 247px;
+  height: 51px;
+  width: 247px;
 }
-.field-wrap  label {
-    margin: 0px 0px 4px;
-    font-size: 12px;
-    font-family: "Plus Jakarta Sans",sans-serif;
-    line-height: 16px;
-    display: inline-block;
+.field-wrap label {
+  margin: 0px 0px 4px;
+  font-size: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 16px;
+  display: inline-block;
 }
 .field-wrap input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 220px;
-    width: 100%;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px;
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 220px;
+  width: 100%;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
 }
 .field-wrap input:focus {
-    border-color: #246eed;
-}
-
-.sl {
-    font-family: "Poppins",sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color:#2a64ad;
-}
-.main-btn {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 12px;
-    cursor: pointer;
-}
-.plus-sign {
-    width: 20px;
-    font-size: 20px;
-}
-
-.delete-button {
-    background: url('../../../assets/trash1.png')  transparent;
-    background-size: cover;
-    border: none;
-    height: 35px;
-    width: 35px;
-    mix-blend-mode:multiply;
-    border-radius: 4px;
-    cursor: pointer;
-    align-content: center;
+  border-color: #246eed;
 }
 
 .field-wrap-profesion {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-.name-and-role{
-    display: flex;
-    justify-content: space-between;
+.name-and-role {
+  display: flex;
+  justify-content: space-between;
 }
 .name-and-role input {
-    width: 200px;
-    margin-right: 20px;
+  width: 200px;
+  margin-right: 20px;
 }
 
 .field-wrap-profesion input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 550px;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px; 
-    align-items: center;
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 550px;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  align-items: center;
 }
 .field-wrap-achivements {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .field-wrap-achivements input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 145px;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px; 
-    align-items: center;
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 145px;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  align-items: center;
 }
 .field-wrap-inp {
-    margin-top: 30px;
-    font-size: 12px;
+  margin-top: 30px;
+  font-size: 12px;
 }
 .field-wrap-inp textarea {
-    height: 100px;
-    margin-top: 10px;
-    padding: 1px 10px;
-    background: #ffffff;
-    width: 510px;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px; 
-    display: flex;
+  height: 100px;
+  margin-top: 10px;
+  padding: 1px 10px;
+  background: #ffffff;
+  width: 510px;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  display: flex;
 }
 .bdr input:focus {
-    outline: none;
+  outline: none;
 }
 .bdr textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 .title-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .fon-link {
-    display: flex;
+  display: flex;
 }
 .for-link label {
-    margin-top: 0px;
-    margin-right: 100px;
+  margin-top: 0px;
+  margin-right: 100px;
 }
-.for-link input{
-    width: 510px;
-    margin-top: 10px;
+.for-link input {
+  width: 510px;
+  margin-top: 10px;
+}
+
+.ach-btn-div {
+  width: 35vw;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ach-plus-sign {
+  width: 20px;
+  font-size: 20px;
+}
+
+.ach-btn-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  border: 1px solid #4351b2;
+  border-radius: 15px;
+
+  background-color: #326ab0;
+  color: #fff;
+  padding: 2px;
+  padding-right: 5px;
+}
+
+.ach-btn-main div {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.ach-plus-sign {
+  font-size: 20px;
+}
+
+.achivement-table {
+  width: 35vw;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.achivement-table th,
+.achivement-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.achivement-table th {
+  background-color: #326ab0;
+  color: #fff;
+}
+
+.achivement-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.achivement-table tr:hover {
+  background-color: #f2f2f2;
+}
+
+.delete-button {
+  background: url("../../../assets/trash1.png") transparent;
+  background-size: cover;
+  border: none;
+  height: 25px;
+  width: 25px;
+  mix-blend-mode: multiply;
+  border-radius: 4px;
+  cursor: pointer;
+  align-content: center;
 }
