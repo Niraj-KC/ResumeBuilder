@@ -26,7 +26,7 @@ const TechnicalSkill = () => {
             <div className="for-flex">
                 <div className="field-wrap-achivements">
                     <div className="field-wrap">
-                        <input type="text" id={`TechnicalSkill-input`} name={`TechnicalSkill-input`} required onKeyDown={handleKeyDown} /><br /><br />
+                        <input type="text" id={`TechnicalSkill-input`} name={`TechnicalSkill-input`} onKeyDown={handleKeyDown} /><br /><br />
                     </div>
                 </div>
                 <div className="chip-display">

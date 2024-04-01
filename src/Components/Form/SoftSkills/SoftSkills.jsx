@@ -27,7 +27,7 @@ const SoftSkills = () => {
             <div className="for-flex">
                 <div className="field-wrap-achivements">
                     <div className="field-wrap">
-                        <input type="text" id={`educationTitle-input`} name={`educationTitle-input`} required onKeyDown={handleKeyDown} /><br /><br />
+                        <input type="text" id={`educationTitle-input`} name={`educationTitle-input`} onKeyDown={handleKeyDown} /><br /><br />
                     </div>
                 </div>
                 <div className="chip-display">

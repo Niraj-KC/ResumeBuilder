@@ -1,6 +1,8 @@
 import {
     FETCH_DATA_SUCCESS,
     FETCH_DATA_FAILURE,
+    UPDATE_PERSONAL_DETAILS,
+    UPDATE_EDUCATION,
     UPDATE_PAST_JOBS,
     UPDATE_ACHIEVEMENTS,
     UPDATE_SOFT_SKILLS,
@@ -20,20 +22,20 @@ const initialState = {
             "linkedin.com/michaelbrown"
         ],
         "education": [
-            {"title": "Bachelor of Arts in English Literature", "year": 2011 },
-            {"title": "Master of Fine Arts in Creative Writing", "year": 2013 }
+            { "title": "Bachelor of Arts in English Literature", "year": 2011 },
+            { "title": "Master of Fine Arts in Creative Writing", "year": 2013 }
         ],
         "job": [
-            {"company": "Publishing House Ltd.", "role": "Editor", "desp": "Edited manuscripts for grammar, style, and coherence.", "fromDate": "2014-03-12", "toDate": "2015-03-12", "is_current": false },
-            {"company": "Freelance Writer Ltd.", "role": "Writer", "desp": "Authored articles for various publications.", "fromDate": "2015-03-12", "toDate": "2018-03-12", "is_current": true }
+            { "company": "Publishing House Ltd.", "role": "Editor", "desp": "Edited manuscripts for grammar, style, and coherence.", "fromDate": "2014-03-12", "toDate": "2015-03-12", "is_current": false },
+            { "company": "Freelance Writer Ltd.", "role": "Writer", "desp": "Authored articles for various publications.", "fromDate": "2015-03-12", "toDate": "2018-03-12", "is_current": true }
         ],
         "achievement": [
-            {"title": "Best Short Story Award", "desp": "Received for a short story published in a literary magazine.", "date": "2015-03-21" }
+            { "title": "Best Short Story Award", "desp": "Received for a short story published in a literary magazine.", "date": "2015-03-21" }
         ],
         "soft_skill": ["Writing", "Editing", "Creativity"],
         "technical_skill": ["Copywriting", "Proofreading", "Content Development"],
         "project": [
-            {"title": "Book Editing Project", "desp": "Edited a bestselling novel for a renowned author.", "link": "example.com/book-editing", "date": "2015-03-21"  }
+            { "title": "Book Editing Project", "desp": "Edited a bestselling novel for a renowned author.", "link": "example.com/book-editing", "date": "2015-03-21" }
         ]
     },
     error: null
@@ -41,6 +43,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+
         case FETCH_DATA_SUCCESS:
             return {
                 ...state,
@@ -53,6 +56,15 @@ const reducer = (state = initialState, action) => {
                 error: action.payload
             };
 
+        // case UPDATE_PERSONAL_DETAILS:
+        //     return {
+        //         ...state,
+        //         formData: {
+        //             ...state.formData,
+        //             action.payload
+        //         }
+        //     };
+
         case UPDATE_PAST_JOBS:
             return {
                 ...state,
@@ -61,6 +73,16 @@ const reducer = (state = initialState, action) => {
                     job: action.payload
                 }
             };
+
+        case UPDATE_EDUCATION:
+            return {
+                ...state,
+                formData: {
+                    ...state.formData,
+                    education: action.payload
+                }
+            };
+            
         case UPDATE_ACHIEVEMENTS:
             return {
                 ...state,

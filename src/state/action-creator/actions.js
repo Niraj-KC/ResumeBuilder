@@ -2,6 +2,7 @@
 
 import axios from "axios";
 
+export const UPDATE_PERSONAL_DETAILS = 'UPDATE_PERSONAL_DETAILS';
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 export const UPDATE_PAST_JOBS = 'UPDATE_PAST_JOBS';
@@ -9,6 +10,20 @@ export const UPDATE_ACHIEVEMENTS = 'UPDATE_ACHIEVEMENTS';
 export const UPDATE_SOFT_SKILLS = 'UPDATE_SOFT_SKILLS';
 export const UPDATE_TECHNICAL_SKILLS = 'UPDATE_TECHNICAL_SKILLS';
 export const UPDATE_PROJECTS = 'UPDATE_PROJECTS';
+export const UPDATE_EDUCATION = 'UPDATE_EDUCATION';
+
+
+
+
+export const updatePersonalDetails = (personalDetails) => ({
+  type: UPDATE_PAST_JOBS,
+  payload: personalDetails
+});
+
+export const updateEducation = (educations) => ({
+  type: UPDATE_EDUCATION,
+  payload: educations
+});
 
 export const updatePastJobs = (jobs) => ({
   type: UPDATE_PAST_JOBS,

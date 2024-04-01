@@ -3,28 +3,49 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './Form.css'
-import { fetchData } from "../../state/action-creator/actions"; // Import your action
+
 import PersonalDetails from "./PersonalDetails/PersonalDetails";
 import ProfesionDetails from "./ProfesionDetails/ProfesionDetails";
 import FooterTemplate from '../../Utils/FooterTemplate/FooterTemplate';
 import Resume from "../Resume/Resume";
 import Template1 from "../Resume/Template1/Template1";
 import HeaderTemplate from "../../Utils/HeaderTemplate/HeaderTemplate";
-import axios from "axios";
 import { Stepper, Step } from 'react-form-stepper';
-
+import { fetchData } from './../../state/action-creator/actions';
+import { BASE_URL } from "../../Utils/config/config";
 
 const Form = () => {
     const dispatch = useDispatch();
     const formData = useSelector(state => state.formData);
+
+    const fetchDataFromServer = () => {
+        const user = JSON.parse(localStorage.getItem("AppUser"))
+        fetch(`${BASE_URL}/resume/${user.id}/`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("fr: ", data);
+                dispatch(fetchData(data));
+
+            })
+
+    }
 
     // Function to handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
         // Here you can dispatch an action to submit formData to your desired endpoint
         console.log(formData);
+
     }
 
+    useEffect(() => {
+        fetchDataFromServer()
+    }, []);
 
     return (
         <div>
