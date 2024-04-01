@@ -1,24 +1,46 @@
-.chip-div {
-    display: block;
-    background: rgb(29,36,202);
-    background: #2a64ad;
-    color: #fff;
-    height: 25px;
-    border: 1px solid #201658;
-    justify-content: space-between;
-    border-radius: 12px;
-    padding: 10px;
-
-
-}
-
-.chip-del {
-    width: 10px;
-    height: 10px;
-    border-radius: 5;
-    background:transparent;
+.chip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FDE2F3; 
+    border-radius: 24px; 
+    padding: 8px 16px; 
+    margin: 2px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid transparent; 
+    transition: all 0.3s ease; 
+  }
+  
+  .chip:hover {
+    background-color: #E5BEEC; 
+  }
+  
+  .chip-label {
+    margin-right: 8px;
+  }
+  
+  .delete-icon {
+    background: none;
     border: none;
-    margin-left: 10px;
-    color: #fff;
     cursor: pointer;
-}
+    padding: 0;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.3s ease; 
+  }
+  
+  .delete-icon:hover {
+    opacity: 1;
+  }
+  
+
+  .feather {
+    width: 16px;
+    height: 16px;
+    stroke: #777;
+  }
+  

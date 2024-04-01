@@ -1,102 +1,36 @@
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* align-items: center; */
-    margin-bottom: 12px;
+.editor-form {
+  width: 40vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+
+  /* align-items: center; */
+  margin-bottom: 12px;
 }
 
 .field-wrap {
-    height: 51px;
-    width: 247px;
-}
-.field-wrap1 {
-    height: 88px;
-    width: 247px;
-}
-.field-wrap1 label {
-    margin: 0px 0px 4px;
-    font-size: 12px;
-    font-family: "Plus Jakarta Sans",sans-serif;
-    line-height: 16px;
-    display: inline-block;
-}
-.field-wrap1 input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 220px;
-    width: 100%;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px;
-}
-.field-wrap1 p {
-    margin: 0;
-    color: #a3a3a3;
-    font-size: 11px;
-    font-family: "Poppins",sans-serif;
-    font-weight: 400;
-    text-align: left;
-    margin-top: 5px;
-    
-}
-.field-wrap  label {
-    margin: 0px 0px 4px;
-    font-size: 12px;
-    font-family: "Plus Jakarta Sans",sans-serif;
-    line-height: 16px;
-    display: inline-block;
-}
-.field-wrap input {
-    height: 30px;
-    padding: 1px 10px;
-    background: #ffffff;
-    max-width: 220px;
-    width: 100%;
-    border: 1px solid #dee3ee;
-    font-family: "Poppins",sans-serif;
-    border-radius: 5px;
-}
-.field-wrap input:focus {
-    border-color: #246eed;
+  display: block;
+  margin: 10px;
 }
 
-.sl {
-    font-family: "Poppins",sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color:#2a64ad;
+.field-wrap label {
+  margin: 0px 0px 4px;
+  font-size: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 16px;
+  display: inline-block;
 }
-.form-row1 {
-    display: flex;
+.field-wrap input {
+  height: 30px;
+  padding: 1px 10px;
+  background: #ffffff;
+  max-width: 220px;
+  width: 100%;
+  border: 1px solid #dee3ee;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
 }
-.main-btn {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 12px;
-    cursor: pointer;
-}
-.plus-sign {
-    width: 20px;
-    font-size: 20px;
-}
-/* .for-flex {
-    display: flex;
-    flex-direction: column;
-} */
-.delete-button {
-    background: url('../../../assets/trash1.png')  transparent;
-    background-size: cover;
-    border: none;
-    height: 35px;
-    width: 35px;
-    mix-blend-mode:multiply;
-    border-radius: 4px;
-    cursor: pointer;
-    /* margin-top: 25px;   */
-    align-content: center;
-    /* filter: brightness(1.2) saturate(0.8) hue-rotate(190deg); */
+
+.field-wrap input:focus {
+  border-color: #246eed;
 }

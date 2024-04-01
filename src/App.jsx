@@ -7,7 +7,6 @@ import { Router, Route, Routes, Navigate, Outlet } from 'react-router-dom'
 // import { Router } from 'express';
 import Form1 from './Components/Form1/Form1';
 import PersonalDetails from './Components/Form/PersonalDetails/PersonalDetails';
-import Education from './Components/Form/Education/Education';
 
 function App() {
   const PrivateRoute = () => {
@@ -23,8 +22,8 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         {/* <Route exact path='/' element={<PrivateRoute />}> */}
-        <Route exact path='/' element={<Education />} />
-        {/* </Route> */}  
+        <Route exact path='/' element={<Form1 />} />
+        {/* </Route> */}
         <Route path='/Template_rb' element={<Template_rb />} />
         <Route path='/Form' element={<Form />} />
       </Routes>

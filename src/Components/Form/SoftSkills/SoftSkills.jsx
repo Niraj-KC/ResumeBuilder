@@ -32,7 +32,7 @@ const SoftSkills = () => {
                 </div>
                 <div className="chip-display">
                     {softSkills.map((skill, idx) => (
-                        <Chip key={idx} text={skill} onClick={() => deletesoftSkillRow(idx)}></Chip>
+                        <Chip key={idx} label={skill} onDelete={() => deletesoftSkillRow(idx)}></Chip>
                     ))}
                 </div>
             </div>

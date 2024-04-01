@@ -31,7 +31,7 @@ const TechnicalSkill = () => {
                 </div>
                 <div className="chip-display">
                     {technicalSkills.map((skill, idx) => (
-                        <Chip key={idx} text={skill} onClick={() => deleteTechnicalSkillsRow(idx)} />
+                        <Chip key={idx} label={skill} onDelete={() => deleteTechnicalSkillsRow(idx)} />
                     ))}
                 </div>
             </div>

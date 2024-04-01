@@ -3,7 +3,7 @@ import './Resume.css'; // Import CSS file for styling
 
 import { useDispatch, useSelector } from "react-redux";
 
-const ResumePDF = () => {
+const Resume = () => {
   const formData = useSelector(state => state.formData);
 
   return (
@@ -99,4 +99,4 @@ const ResumePDF = () => {
   );
 }
 
-export default ResumePDF;
+export default Resume;

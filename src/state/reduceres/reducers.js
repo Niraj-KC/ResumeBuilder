@@ -7,10 +7,18 @@ import {
     UPDATE_ACHIEVEMENTS,
     UPDATE_SOFT_SKILLS,
     UPDATE_TECHNICAL_SKILLS,
-    UPDATE_PROJECTS
+    UPDATE_PROJECTS,
+    UPDATE_SELECTED_ROW
 } from "../action-creator/actions";
 
 const initialState = {
+    selectedRow: {
+        education: null,
+        achievement: null,
+        project: null,
+        job: null
+    },
+
     formData: {
         "first_name": "Michael",
         "last_name": "Brown",
@@ -43,6 +51,13 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case UPDATE_SELECTED_ROW:
+            return {
+                ...state,
+                selectedRow: {
+                    ...action.payload
+                }
+            }
 
         case FETCH_DATA_SUCCESS:
             return {
@@ -56,14 +71,14 @@ const reducer = (state = initialState, action) => {
                 error: action.payload
             };
 
-        // case UPDATE_PERSONAL_DETAILS:
-        //     return {
-        //         ...state,
-        //         formData: {
-        //             ...state.formData,
-        //             action.payload
-        //         }
-        //     };
+        case UPDATE_PERSONAL_DETAILS:
+            return {
+                ...state,
+                formData: {
+                    ...state.formData,
+                    ...action.payload
+                }
+            };
 
         case UPDATE_PAST_JOBS:
             return {
@@ -82,7 +97,7 @@ const reducer = (state = initialState, action) => {
                     education: action.payload
                 }
             };
-            
+
         case UPDATE_ACHIEVEMENTS:
             return {
                 ...state,
