@@ -85,10 +85,9 @@ const extra = () => {
     };
 
     return (
-        <div>
+        <>
             <HeaderTemplate />
             <div className="login-reg">
-                <div className="login-page">
                     <div className="login-page-left">
                         <div className="login-info">
                             <div className="login-info-site-logo">
@@ -156,7 +155,6 @@ const extra = () => {
                                                     <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                                     <div className="show-pass-img"></div>
                                                 </div>
-                                                <div className="forget-link"><a>Forgot Password?</a></div>
                                             </div>
                                             <div className="field-wrap align-right">
                                                 <button>Login</button>
@@ -168,10 +166,9 @@ const extra = () => {
                             </form>
                         </div>
                     </div>
-                </div>
             </div>
             <FooterTemplate />
-        </div>
+        </>
 
     )
 }
