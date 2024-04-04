@@ -34,8 +34,8 @@ const initialState = {
             { "title": "Master of Fine Arts in Creative Writing", "year": 2013 }
         ],
         "job": [
-            { "company": "Publishing House Ltd.", "role": "Editor", "desp": "Edited manuscripts for grammar, style, and coherence.", "fromDate": "2014-03-12", "toDate": "2015-03-12", "is_current": false },
-            { "company": "Freelance Writer Ltd.", "role": "Writer", "desp": "Authored articles for various publications.", "fromDate": "2015-03-12", "toDate": "2018-03-12", "is_current": true }
+            { "company": "Publishing House Ltd.", "role": "Editor", "desp": "Edited manuscripts for grammar, style, and coherence.", "from_date": "2014-03-12", "to_date": "2015-03-12", "is_current": false },
+            { "company": "Freelance Writer Ltd.", "role": "Writer", "desp": "Authored articles for various publications.", "from_date": "2015-03-12", "to_date": "2018-03-12", "is_current": true }
         ],
         "achievement": [
             { "title": "Best Short Story Award", "desp": "Received for a short story published in a literary magazine.", "date": "2015-03-21" }
@@ -60,8 +60,10 @@ const reducer = (state = initialState, action) => {
             }
 
         case FETCH_DATA_SUCCESS:
+            // console.log("check", state, action.payload);
             return {
                 ...state,
+                // ...action.payload,
                 formData: action.payload,
                 error: null
             };

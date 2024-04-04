@@ -57,7 +57,7 @@ const Form1 = () => {
   const dispatch = useDispatch();
   const formData = useSelector(state => state.formData);
 
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(5);
   const sx = {
     "& .MuiStepLabel-root .Mui-completed": {
       color: "green"
@@ -157,9 +157,9 @@ const Form1 = () => {
                     </Stepper>
                     {activeStep === steps.length && (
                       <Paper square elevation={0} sx={{ p: 3 }}>
-                        <Typography>All steps completed - you&apos;re finished</Typography>
+                        <Typography>All steps completed - your resume is built</Typography>
                         <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                          Reset
+                          Download PDF 
                         </Button>
                       </Paper>
                     )}

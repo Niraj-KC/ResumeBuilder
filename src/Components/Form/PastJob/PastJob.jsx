@@ -11,15 +11,18 @@ const PastJob = () => {
 
     // Function to add a new row for past job
     const addPastjobRow = () => {
-        dispatch(updatePastJobs([...jobs, { company: '', role: '', fromDate: '', toDate: '', description: '' }]));
+        dispatch(updatePastJobs([...jobs, { company: '', role: '', from_date: '', to_date: '', description: '' }]));
         setTimeout(() => {
             dispatch(updateSelectedRow({ job: jobs.length }));
         }, 1);
     };
-
+    const setSelectRowNull = () => {
+        dispatch(updateSelectedRow({ project: null }));
+    }
     // Function to delete a row for past job
     const deletePastjobRow = (idx) => {
         dispatch(updatePastJobs(jobs.filter((_, index) => index !== idx)));
+        setSelectRowNull()
     };
 
     // Function to handle change in input fields
@@ -74,8 +77,8 @@ const PastJob = () => {
                                 type="date"
                                 id={`fromDate${selectedRow}`}
                                 name={`fromDate${selectedRow}`}
-                                value={jobs[selectedRow]?.fromDate || ""}
-                                onChange={(e) => handleChange('fromDate', e.target.value)}
+                                value={jobs[selectedRow]?.from_date || ""}
+                                onChange={(e) => handleChange('from_date', e.target.value)}
                                 required
                             />
                         </div>
@@ -85,8 +88,8 @@ const PastJob = () => {
                                 type="date"
                                 id={`toDate${selectedRow}`}
                                 name={`toDate${selectedRow}`}
-                                value={jobs[selectedRow]?.toDate || ""}
-                                onChange={(e) => handleChange('toDate', e.target.value)}
+                                value={jobs[selectedRow]?.to_date || ""}
+                                onChange={(e) => handleChange('to_date', e.target.value)}
                                 required
                             />
                         </div>
@@ -105,7 +108,7 @@ const PastJob = () => {
                 </div>
             </div>
             <div className="job-btn-div" id="addEducation">
-                <div className="job-btn-main" onClick={() => dispatch(updateSelectedRow({ job: null }))}>
+                <div className="job-btn-main" onClick={setSelectRowNull}>
                     <div className="job-plus-sign">+</div>
                     <div>Add More</div>
                 </div>
@@ -129,8 +132,8 @@ const PastJob = () => {
                             <td>{job.company}</td>
                             <td>{job.role}</td>
                             <td>{job.desp}</td>
-                            <td>{job.fromDate}</td>
-                            <td>{job.toDate}</td>
+                            <td>{job.from_date}</td>
+                            <td>{job.to_date}</td>
                             <td>
                                 <button className="delete-button" onClick={() => deletePastjobRow(selectedRow)}></button>
                             </td>

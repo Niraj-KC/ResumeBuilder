@@ -23,8 +23,11 @@ const Achivements = () => {
     const deleteAchivementRow = (selectedRow) => {
         // setAchivementRow(achivements.filter(row => selectedRow !== id));
         dispatch(updateAchievements(achivements.filter((_, index) => index !== selectedRow)));
+        setSelectRowNull();
     }
-
+    const setSelectRowNull = () => {
+        dispatch(updateSelectedRow({ project: null }));
+    }
     const handleChange = (key, value) => {
         // console.log("k:", key, "v", value);
 
@@ -72,7 +75,7 @@ const Achivements = () => {
             </div>
 
             <div className="ach-btn-div" id="addAchivement">
-                <div className="ach-btn-main" onClick={() => dispatch(updateSelectedRow({ achievement: null }))}>
+                <div className="ach-btn-main" onClick={setSelectRowNull}>
                     <div className="ach-plus-sign">+</div>
                     <div>Add More</div>
                 </div>

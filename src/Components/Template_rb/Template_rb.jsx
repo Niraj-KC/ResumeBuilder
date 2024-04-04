@@ -75,7 +75,7 @@ const Template_rb = () => {
         </div>
       </div>
       <div className="skip-bar">
-        <Link to="/Form"><a className="skip-link">Skip for Now</a></Link>
+        <Link to="/Form"><div className="skip-link">Skip for Now</div></Link>
       </div>
       {/* <div className="footer-container">
         <div className="footer">

@@ -2,12 +2,17 @@ import React from 'react';
 import './Resume.css'; // Import CSS file for styling
 
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
 
 const Resume = () => {
   const formData = useSelector(state => state.formData);
 
-  return (
+  useEffect(() => {
 
+    console.log("resume--fd: ", formData);
+  }, []);
+
+  return (
     <div className="resume">
       <div className="resume-top">
         <h2>{`${formData.first_name} ${formData.last_name}`}</h2>

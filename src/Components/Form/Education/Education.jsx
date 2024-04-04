@@ -19,10 +19,13 @@ function Education() {
         console.log("#len-ar", selectedRow);
 
     };
-
+    const setSelectRowNull = () => {
+        dispatch(updateSelectedRow({ project: null }));
+    }
     // Function to delete a row for past job
     const deleteEducationRow = (idx) => {
         dispatch(updateEducation(educations.filter((_, index) => index !== idx)));
+        setSelectRowNull()
     };
 
     // Function to handle change in input fields
@@ -73,7 +76,7 @@ function Education() {
             </div>
 
             <div className="edu-btn-div" id="addEducation">
-                <div className="edu-btn-main" onClick={() => dispatch(updateSelectedRow({education:null}))}>
+                <div className="edu-btn-main" onClick={setSelectRowNull}>
                     <div className="edu-plus-sign">+</div>
                     <div>Add More</div>
                 </div>

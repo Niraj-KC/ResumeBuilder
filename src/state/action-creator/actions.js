@@ -1,6 +1,8 @@
 // actions.js
 
 import axios from "axios";
+import { BASE_URL } from "../../Utils/config/config";
+import { useDispatch, useSelector } from "react-redux";
 
 export const UPDATE_PERSONAL_DETAILS = 'UPDATE_PERSONAL_DETAILS';
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
@@ -56,22 +58,65 @@ export const updateProjects = (projects) => ({
 });
 
 export const fetchDataSuccess = (data) => ({
-    type: FETCH_DATA_SUCCESS,
-    payload: data
+  type: FETCH_DATA_SUCCESS,
+  payload: data
 });
 
 export const fetchDataFailure = (error) => ({
-    type: FETCH_DATA_FAILURE,
-    payload: error
+  type: FETCH_DATA_FAILURE,
+  payload: error
 });
 
-export const fetchData = () => {
-    return async (dispatch) => {
-        try {
-            const response = await axios.get(`/resume/2`);
-            dispatch(fetchDataSuccess(response.data));
-        } catch (error) {
-            dispatch(fetchDataFailure(error));
-        }
-    };
+// export const fetchData = ({user_id}) => {
+//   return async () => {
+//     try {
+//       // const response = await axios.get(`${BASE_URL}/resume/${user_id}`);
+//       return await fetch(`${BASE_URL}/resume/${user_id}/`, {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       })
+//         .then(res => res.json())
+//         .then(data => {
+
+//           console.log("res",data);
+//           return fetchDataSuccess(data);
+//         })
+
+//     } catch (error) {
+//       return fetchDataFailure(error);
+//     }
+//   };
+// };
+
+export const fetchData = async ({ user_id }) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(`${BASE_URL}/resume/${user_id}/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+
+      const data = await response.json();
+      data.social_links = JSON.parse(data.social_links);
+      data.soft_skill = JSON.parse(data.soft_skill)
+      data.technical_skill = JSON.parse(data.technical_skill)
+
+      console.log(dispatch(fetchDataSuccess(data)));
+      // const formData = useSelector(state => state.formData);
+
+      // console.log("res", formData);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      dispatch(fetchDataFailure(error));
+    }
+  };
 };

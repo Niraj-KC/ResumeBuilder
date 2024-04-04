@@ -15,6 +15,8 @@ const extra = () => {
     const [showLoginForm, setShowLoginForm] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastName] = useState('');
     const [error, setError] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const navigate = useNavigate();
@@ -31,7 +33,7 @@ const extra = () => {
         e.preventDefault();
         if (showLoginForm) {
             try {
-                var data = { email: "abc@asd.com", password: "password123456" };
+                var data = { email: email, password: password };
                 fetch(`${BASE_URL}/authentication/login/`, {
                     method: "POST",
                     headers: {
@@ -57,7 +59,7 @@ const extra = () => {
         }
         else {
             try {
-                var data = { first_name: "fn", last_name: "ln", email: "abc@asd.com", password: "password123456" };
+                var data = { first_name: first_name, last_name: last_name, email: email, password: password };
                 fetch(`${BASE_URL}/authentication/register/`, {
                     method: "POST",
                     headers: {
@@ -114,8 +116,12 @@ const extra = () => {
                                     <div className="form">
                                         <div className={`signup-form ${showLoginForm ? 'hidden' : ''}`} id="signupForm">
                                             <div className="field-wrap">
-                                                <div className="field-wrap-email">Name</div>
-                                                <input type="text" placeholder="Enter Your Name" />
+                                                <div className="field-wrap-email">First Name</div>
+                                                <input type="text" value={first_name} onChange={(e)=>{setFirstName(e.target.value.trim())}}   placeholder="Enter Your First Name" />
+                                            </div>
+                                            <div className="field-wrap">
+                                                <div className="field-wrap-email">Last Name</div>
+                                                <input type="text" value={last_name}  onChange={(e)=>{setLastName(e.target.value.trim())}} placeholder="Enter Your Last Name" />
                                             </div>
                                             <div className="field-wrap">
                                                 <div className="field-wrap-email">Email</div>
